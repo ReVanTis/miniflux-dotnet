@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27128.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "miniflux-dotnet", "miniflux-dotnet\miniflux-dotnet.csproj", "{BF4423F7-2346-4B6C-8FFD-D2A80E6879D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{055F8FE4-1282-4C64-BD0B-DF38B0770047}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF4423F7-2346-4B6C-8FFD-D2A80E6879D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4423F7-2346-4B6C-8FFD-D2A80E6879D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4423F7-2346-4B6C-8FFD-D2A80E6879D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4423F7-2346-4B6C-8FFD-D2A80E6879D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055F8FE4-1282-4C64-BD0B-DF38B0770047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055F8FE4-1282-4C64-BD0B-DF38B0770047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055F8FE4-1282-4C64-BD0B-DF38B0770047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055F8FE4-1282-4C64-BD0B-DF38B0770047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52A4D3D-B9F3-4BB8-B4D4-BBCE856D8CF0}
+	EndGlobalSection
+EndGlobal
