@@ -11,7 +11,7 @@ namespace Miniflux
 {
     public class MinifluxClient
     {
-        private const string userAgent = @"Miniflux dotNet Client Library <https://github.com/miniflux/miniflux-dotnet>"; 
+        private const string userAgent = @"Miniflux dotNet Client Library <https://github.com/ReVanTis/miniflux-dotnet>"; 
         private const int defaultTimeout = 80_000; 
 
         public string URL { set; get; }
