@@ -20,8 +20,10 @@ namespace test
             string URL = credentialStr[0];
             string Username = credentialStr[1];
             string Password = credentialStr[2];
-            MinifluxClient client = new MinifluxClient(URL, Username, Password);
+            string Proxy = credentialStr[3];
+            MinifluxClient client = new MinifluxClient(URL, Username, Password, Proxy);
             //Do whatever you want.
+            var feeds = client.GetFeeds();
             
         }
     }

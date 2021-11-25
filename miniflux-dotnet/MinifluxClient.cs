@@ -17,24 +17,30 @@ namespace Miniflux
         public string URL { set; get; }
         public string Username { set; get; }
         public string Password { set; get; }
+        public string Proxy { set; get; }
         public KeyValuePair<string, string> AuthHeader { get { return new KeyValuePair<string, string>("Authorization", "Basic " + Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(Username + ":" + Password))); } }
 
-        public MinifluxClient(string url, string username, string password)
+        public MinifluxClient(string url, string username, string password, string proxy)
         {
             URL = url;
             Username = username;
             Password = password;
+            Proxy = proxy;
         }
 
         public HttpWebRequest BuildRequest(string Method, string path)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL + path);
+            HttpWebRequest request = WebRequest.Create(URL + path) as HttpWebRequest;
             request.Method = Method;
             request.UserAgent = userAgent;
             request.Timeout = defaultTimeout;
             request.Headers.Add(AuthHeader.Key, AuthHeader.Value);
             request.Headers.Add("Content-Type", "application/json; charset=UTF-8");
             request.Headers.Add("Accept", "application/json");
+            var p_str = Proxy.Split(":");
+            if(!Proxy.IsNullOrEmpty())
+                request.Proxy = new WebProxy(Proxy);
+            
             return request;
         }
 
