@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Miniflux
 {
@@ -16,8 +17,14 @@ namespace Miniflux
 
         public static string ToJson(this object obj)
         {
+            DefaultContractResolver contractResolver = new()
+            {
+                NamingStrategy = new SnakeCaseNamingStrategy()
+            };
+
             var settings = new JsonSerializerSettings()
             {
+                ContractResolver = contractResolver,
                 NullValueHandling = NullValueHandling.Ignore,
                 DefaultValueHandling = DefaultValueHandling.Ignore,
             };

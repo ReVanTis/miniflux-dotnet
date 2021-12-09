@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace Miniflux
 {
     public class Consts
     {
-        private const string EntryStatusUnread = "unread";
-        private const string EntryStatusRead = "read";
-        private const string EntryStatusRemoved = "removed";
+        public const string EntryStatusUnread = "unread";
+        public const string EntryStatusRead = "read";
+        public const string EntryStatusRemoved = "removed";
     }
 
     public class User
@@ -16,13 +16,35 @@ namespace Miniflux
         public Int64 ID { set; get; }
         public string Username { set; get; }
         public string Password { set; get; }
+
+        [JsonProperty("is_admin")]
         public bool IsAdmin { set; get; }
+
         public string Theme { set; get; }
         public string Language { set; get; }
         public string Timezone { set; get; }
 
         [JsonProperty("entry_sorting_direction")]
         public string EntryDirection { set; get; }
+        public string Stylesheet { set; get; }
+
+        [JsonProperty("google_id")]
+        public string GoogleID { set; get; }
+
+        [JsonProperty("openid_connect_id")]
+        public string OpenIDConnectID { set; get; }
+
+        [JsonProperty("entries_per_page")]
+        public Int64 EntriesPerPage { set; get; }
+
+        [JsonProperty("keyboard_shortcuts")]
+        public bool KeyboardShortcut { set; get; }
+
+        [JsonProperty("show_reading_time")]
+        public bool ShowReadingTime { set; get; }
+
+        [JsonProperty("entry_swipe")]
+        public bool EntrySwipe { set; get; }
 
         [JsonProperty("last_login_at")]
         public DateTime LastLoginAt { set; get; }
@@ -76,8 +98,38 @@ namespace Miniflux
         [JsonProperty("parsing_error_count")]
         public int ParsingErrorCount { set; get; }
 
+        [JsonProperty("scraper_rules")]
+        public string ScrapperRules { set; get; }
+
+
+        [JsonProperty("rewrite_rules")]
+        public string RewriteRules { set; get; }
+
+        public bool Crawler { set; get; }
+        [JsonProperty("blocklist_rules")]
+        public string BlocklistRules { set; get; }
+
+        [JsonProperty("keeplist_rules")]
+        public string KeeplistRules { set; get; }
+
+        [JsonProperty("user_agent")]
+        public string UserAgent { set; get; }
+
+        public string Username { set; get; }
+
+        public string Password { set; get; }
+        public bool Disabled { set; get; }
+
+        [JsonProperty("ignore_http_cache")]
+        public bool IgnoreHttpCache { set; get; }
+
+        [JsonProperty("fetch_via_proxy")]
+        public bool FetchViaProxy { set; get; }
+
         public Category Category { set; get; }
+        public Icon Icon { set; get; }
         public Entry[] Entries { set; get; }
+
     }
 
     public class FeedIcon
@@ -88,6 +140,13 @@ namespace Miniflux
         public string Mimetype { set; get; }
 
         public string Data { set; get; }
+    }
+    public class Icon
+    {
+        [JsonProperty("feed_id")]
+        public Int64 FeedID { set; get; }
+        [JsonProperty("icon_id")]
+        public Int64 IconID { set; get; }
     }
 
     public class Entry
@@ -105,12 +164,19 @@ namespace Miniflux
         public string Title { set; get; }
         public string URL { set; get; }
 
+        [JsonProperty("comments_url")]
+        public string CommentsURL { set; get; }
+
         [JsonProperty("published_at")]
         public DateTime Date { set; get; }
 
         public string Content { set; get; }
         public string Author { set; get; }
         public bool Starred { set; get; }
+
+        [JsonProperty("reading_time")]
+        public Int64 ReadingTime { set; get; }
+
         public Enclosure[] Enclosures { set; get; }
         public Feed Feed { set; get; }
         public Category Category { set; get; }

@@ -1,0 +1,5 @@
+{
+  "URL": "https://miniflux.example.com:10443", // Your server URL:Port, port can be empty if using default port (80/443)
+  "Token": "SECRET_TOKEN",                     // Paste your api Token generated from your miniflux account
+  "Proxy": "socks5://127.0.0.1:1984"           // Remove "Proxy" element if you do not wish to use any type of proxy
+}
